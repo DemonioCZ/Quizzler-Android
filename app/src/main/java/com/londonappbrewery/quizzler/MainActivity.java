@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
     mTrueButton = (Button) findViewById(R.id.true_button); //konvertujeme z View do Button
-    mFalseButton = (Button) findViewById(R.id.false_button);
+    mFalseButton = findViewById(R.id.false_button);
 
     //Rozepsany onClickListener
         View.OnClickListener myListener = new View.OnClickListener() {
