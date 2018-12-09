@@ -2,6 +2,10 @@ package com.londonappbrewery.quizzler;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -9,7 +13,8 @@ public class MainActivity extends Activity {
 
 
     // TODO: Declare member variables here:
-
+    Button mTrueButton;
+    Button mFalseButton;
 
     // TODO: Uncomment to create question bank
 //    private TrueFalse[] mQuestionBank = new TrueFalse[] {
@@ -33,6 +38,28 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+    mTrueButton = (Button) findViewById(R.id.true_button); //konvertujeme z View do Button
+    mFalseButton = (Button) findViewById(R.id.false_button);
+
+    //Rozepsany onClickListener
+        View.OnClickListener myListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Quizzler","Tlačítko zmáčknuto."); // zobrazení v logu
+                Toast.makeText(getApplicationContext(),"Tlačítko TRUE zmáčknuto!",Toast.LENGTH_SHORT).show();
+            }
+        };
+        mTrueButton.setOnClickListener(myListener);
+
+     // Zkrácený zápis(sloučené) pro levé tlačítko
+
+        mFalseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // zobrazí se hláška na displayi po ztlačení tlačítka
+                Toast.makeText(getApplicationContext(), "Tlačítko FALSE zmáčknuto!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
     }
