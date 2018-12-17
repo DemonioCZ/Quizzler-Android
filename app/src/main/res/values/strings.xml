@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Quizzler</string>
 
-    <string name="true_button">True</string>
-    <string name="false_button">False</string>
-    <string name="initial_score">Score 0/13</string>
+    <string name="true_button">Správně</string>
+    <string name="false_button">Špatně</string>
+    <string name="initial_score">Skóre 0/13</string>
 
 
-    <string name="incorrect_toast">Wrong!</string>
-    <string name="correct_toast">You got it!</string>
+    <string name="incorrect_toast">Špatně!</string>
+    <string name="correct_toast">Správně!</string>
 
     <string name="question_1">Valentýn je zakázán v Saudské Arabii.</string>
     <string name="question_2">A slug\'s blood is green.</string>
