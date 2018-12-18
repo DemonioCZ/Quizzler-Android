@@ -50,11 +50,20 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (savedInstanceState!=null){
+            mScore = savedInstanceState.getInt("ScoreKey");
+            mIndex = savedInstanceState.getInt("IndexKey");
+        }
+        else{
+
+        }
+
     mTrueButton = (Button) findViewById(R.id.true_button); //konvertujeme z View do Button
     mFalseButton = findViewById(R.id.false_button);
     mQuestionTextView = findViewById(R.id.question_text_view); //ulozi hodnotu question_text_view do mQuestionTextView
     mScoreTextView = findViewById(R.id.score);
     mProgressBarr = findViewById(R.id.progress_bar);
+    mScoreTextView.setText("Skóre " + mScore + "/" + mQuestionBank.length);
 
     mQuestion = mQuestionBank[mIndex].getmQuestionID(); // vrátí text otázky, getmQ... definované v TF.java
     mQuestionTextView.setText(mQuestion);  // vloží text do textového pole mQTV
@@ -114,4 +123,12 @@ public class MainActivity extends Activity {
         }
 
     }
+    @Override  // při otočení display se spustí tato metoda
+    public void onSaveInstanceState (Bundle outState){
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("ScoreKey",mScore); //hodnota mScore se pomocí key ScoreKey přenese na metodu onCreate
+        outState.putInt("IndexKey",mIndex);
+    }
+
 }
