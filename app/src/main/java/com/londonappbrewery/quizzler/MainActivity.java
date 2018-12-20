@@ -55,7 +55,8 @@ public class MainActivity extends Activity {
             mIndex = savedInstanceState.getInt("IndexKey");
         }
         else{
-
+            mScore=0;
+            mIndex=0;
         }
 
     mTrueButton = (Button) findViewById(R.id.true_button); //konvertujeme z View do Button
@@ -123,8 +124,8 @@ public class MainActivity extends Activity {
         }
 
     }
-    @Override  // při otočení display se spustí tato metoda
-    public void onSaveInstanceState (Bundle outState){
+    @Override  // při otočení display se aplikace restartuje a spustí tato metoda
+    public void onSaveInstanceState (Bundle outState){ //Bundle = key a value
         super.onSaveInstanceState(outState);
 
         outState.putInt("ScoreKey",mScore); //hodnota mScore se pomocí key ScoreKey přenese na metodu onCreate
